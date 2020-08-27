@@ -1,0 +1,9 @@
+CMakeCache.txt
+catchExample
+vectorsAndMaps
+Makefile
+cmake_install.cmake
+CMakeFiles/
+cmake-build-debug/
+.idea/
+
