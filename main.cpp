@@ -23,5 +23,5 @@ TEST_CASE( "Testing the sumByStride() function", "[sumByStride]" ) {
 TEST_CASE( "Testing the histogram() function", "[histogram]" ) {
     //string tmp = histogram(vector<string> {"foca", "leon", "zorra", "foca", "perro", "perro", "perro"});
     //REQUIRE( (tmp == "[perro:3][foca:2][zorra:1][leon:1]" ||   
-              tmp == "[perro:3][foca:2][leon:1][zorra:1]") );
+    //          tmp == "[perro:3][foca:2][leon:1][zorra:1]") );
 }
