@@ -23,7 +23,7 @@
     {
       "name": "run",
       "setup": "",
-      "run": "./dat",
+      "run": "./vectorAndMap",
       "input": "",
       "output": "",
       "comparison": "included",
