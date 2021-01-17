@@ -1,13 +1,13 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() 
-#include "catch.hpp"
+#include "catch_amalgamated.hpp"
 #include <vector>
 #include <map>
 
 using namespace std;
 
 
-int sumByStride( const vector<int> &v, int stride ) {
-    return 0;
+int countEqual( const vector<int>::iterator &from, const vector<int>::iterator &to, int value ) {
+    return -1;
 }
 
 string histogram( const vector<string> &v) {
@@ -15,9 +15,10 @@ string histogram( const vector<string> &v) {
     return st;
 }
 
-TEST_CASE( "Testing the sumByStride() function", "[sumByStride]" ) {
-    //REQUIRE( sumByStride(vector<int> {10,20,30,40,50},2)  == 90);
-    //REQUIRE( sumByStride(vector<int> {10,20,30,40,50},3)  == 50);
+TEST_CASE( "Testing the countEqual() function", "[countEqual]" ) {
+//    vector<int> v {10, 20, 30, 20, 10};
+//    REQUIRE(countEqual(v.begin() + 1, v.begin() + 3, 10) == 0);
+//    REQUIRE(countEqual(v.begin(), v.begin() + 3, 10) == 1);
 }
 
 TEST_CASE( "Testing the histogram() function", "[histogram]" ) {
