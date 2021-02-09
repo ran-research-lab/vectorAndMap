@@ -1,7 +1,22 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() 
-#include "catch_amalgamated.hpp"
 #include <vector>
 #include <map>
+#include <string>
+
+// Variables and macros for assertions, DO NOT CHANGE ****
+int totalAssertions = 0;
+int passedAssertions  = 0;
+#define expect( chk )  \
+    totalAssertions++; \
+    if (!(chk)) \
+        printf("Assertion (%s) failed %s at line %d \n", #chk, __FILE__,__LINE__); \
+    else { \
+        printf("Passed line %d \n", __LINE__); \
+        passedAssertions++; \
+    }
+#define assertionReport() \
+     printf("Passed %d of %d assertions\n",passedAssertions,totalAssertions);
+//*******************************************************
+
 
 using namespace std;
 
@@ -15,14 +30,20 @@ string histogram( const vector<string> &v) {
     return st;
 }
 
-TEST_CASE( "Testing the countEqual() function", "[countEqual]" ) {
-//    vector<int> v {10, 20, 30, 20, 10};
-//    REQUIRE(countEqual(v.begin() + 1, v.begin() + 3, 10) == 0);
-//    REQUIRE(countEqual(v.begin(), v.begin() + 3, 10) == 1);
+
+int main() {
+
+    // Pruebas para countEqual
+    vector<int> v {10, 20, 30, 20, 10};
+    expect(countEqual(v.begin() + 1, v.begin() + 3, 10) == 0);
+    expect(countEqual(v.begin(), v.begin() + 3, 10) == 1);
+
+    // Pruebas para histogram
+    string tmp = histogram(vector<string> {"foca", "leon", "zorra",
+                                           "foca", "perro", "perro", "perro"});
+    expect ( (tmp == "[perro:3][foca:2][zorra:1][leon:1]" ||
+              tmp == "[perro:3][foca:2][leon:1][zorra:1]") );
+
+    assertionReport();
 }
 
-TEST_CASE( "Testing the histogram() function", "[histogram]" ) {
-    //string tmp = histogram(vector<string> {"foca", "leon", "zorra", "foca", "perro", "perro", "perro"});
-    //REQUIRE( (tmp == "[perro:3][foca:2][zorra:1][leon:1]" ||   
-    //          tmp == "[perro:3][foca:2][leon:1][zorra:1]") );
-}
